@@ -1,6 +1,5 @@
 package com.url.shortener.models;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.*;
 import lombok.Data;
 

@@ -23,7 +23,7 @@ public class UrlMappingService {
         urlMapping.setShortUrl(shortUrl);
         UrlMapping savedUrlMapping = urlMappingRepository.save(urlMapping);
 
-        return convertToDto(urlMapping);
+        return convertToDto(savedUrlMapping);
     }
     private UrlMappingDTO convertToDto(UrlMapping urlMapping){
         UrlMappingDTO urlMappingDTO = new UrlMappingDTO();

@@ -2,12 +2,12 @@ import React from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import Card from "./Card";
-// import { useStoreContext } from "../contextApi/ContextApi";
+import { useStoreContext } from "../contextApi/ContextApi";
 
 
 const LandingPage = () => {
-  // const { token } = useStoreContext();
-  // console.log("TOKEN FROM LANDING PAGE: " + token);
+  const { token } = useStoreContext();
+  console.log("TOKEN FROM LANDING PAGE: " + token);
 
   const dashBoardNavigateHandler = () => {
 

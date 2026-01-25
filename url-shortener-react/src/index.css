@@ -1,7 +1,7 @@
-@import "tailwindcss";
-
 /* 1. Import your fonts so the classes actually work */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap');
+@import "tailwindcss";
+
 
 @theme {
   /* 2. Colors: Match the camelCase exactly from your old config */

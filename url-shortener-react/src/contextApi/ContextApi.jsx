@@ -18,6 +18,7 @@ export const ContextProvider = ({ children }) => {
 };
 
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useStoreContext = () => {
     const context = useContext(ContextApi);
     return context;

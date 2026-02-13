@@ -3,14 +3,18 @@ import React from "react";
 import { motion } from "framer-motion";
 import Card from "./Card";
 import { useStoreContext } from "../contextApi/ContextApi";
+import { useNavigate } from "react-router-dom";
 
 
 const LandingPage = () => {
   const { token } = useStoreContext();
   console.log("TOKEN FROM LANDING PAGE: " + token);
 
-  const dashBoardNavigateHandler = () => {
+  const navigate = useNavigate();
 
+  const dashBoardNavigateHandler = () => {
+    if (token) navigate("/dashboard");
+    else navigate("/login");
   };
   return (
     <div className="min-h-[calc(100vh-64px)]  lg:px-14 sm:px-8 px-4">

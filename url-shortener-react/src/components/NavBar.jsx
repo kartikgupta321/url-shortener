@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IoIosMenu } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
-// import { useStoreContext } from "../contextApi/ContextApi";
+import { useStoreContext } from "../contextApi/ContextApi";
 
 
 const Navbar = () => {
   const navigate = useNavigate();
-  // const { token, setToken } = useStoreContext();
+  const { token, setToken } = useStoreContext();
   const path = useLocation().pathname;
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   const onLogOutHandler = () => {
-    // setToken(null);
+    setToken(null);
     localStorage.removeItem("JWT_TOKEN");
     navigate("/login");
   };
@@ -50,7 +50,7 @@ const Navbar = () => {
               About
             </Link>
           </li>
-          { (
+          {token && (
             <li className="hover:text-btnColor font-[500]  transition-all duration-150">
             <Link
               className={`${
@@ -62,7 +62,7 @@ const Navbar = () => {
             </Link>
           </li>
           )}
-          { (
+          {!token && (
             <Link to="/register">
               <li className=" sm:ml-0 -ml-1 bg-rose-700 text-white  cursor-pointer w-24 text-center font-semibold px-2 py-2 rounded-md  hover:text-slate-300   transition-all duration-150">
                 SignUp
@@ -70,7 +70,7 @@ const Navbar = () => {
             </Link>
             )}
 
-          { (
+          {token && (
             <button
              onClick={onLogOutHandler}
              className="sm:ml-0 -ml-1 bg-rose-700 text-white  cursor-pointer w-24 text-center font-semibold px-2 py-2 rounded-md  hover:text-slate-300   transition-all duration-150">
@@ -94,4 +94,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
